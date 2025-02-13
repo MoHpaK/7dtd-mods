@@ -1,0 +1,7 @@
+<configs>
+    <!--добавит краски в раздел химикатов-->
+    <append xpath="/item_modifiers/item_modifier[starts-with(@name, 'modDye')]">
+        <property name="Group" value="Resources,Chemicals,CFChemicals"/>
+        <property name="Craft_area" value="chemistryStation"/>
+    </append>
+</configs>
