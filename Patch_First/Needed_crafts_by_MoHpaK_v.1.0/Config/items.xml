@@ -1,0 +1,99 @@
+<!--Всё для пустой банки-->
+
+<config>
+<!--зачерпнуть набрав пустую банку-->
+    <append xpath="/items">
+        <item name="drinkJarEmpty">
+            <property name="HoldType" value="3"/>
+            <property name="Meshfile" value="@:Other/Items/Food/emptyJarPrefab.prefab"/>
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="Mglass"/>
+            <property name="Stacknumber" value="1250"/>
+            <property name="Weight" value="10"/>
+            <property name="EconomicValue" value="6"/>
+            <property name="CraftingIngredientTime" value="9"/>
+            <property class="Action1">
+                <property name="Class" value="CollectWater"/>
+                <property name="Delay" value="0.35"/>
+                <property name="Change_item_to" value="drinkJarRiverWater"/>
+                <property name="Do_block_action" value="deplete1"/>
+                <property name="Focused_blockname_1" value="water"/>
+                <property name="Focused_blockname_2" value="waterMoving"/>
+                <property name="Focused_blockname_3" value="waterStaticBucket"/>
+                <property name="Focused_blockname_4" value="waterMovingBucket"/>
+                <property name="Focused_blockname_5" value="terrWaterPOI"/>
+                <property name="Sound_start" value="bucketfill_water"/>
+            </property>
+            <property name="Group" value="Resources"/>
+        </item>
+    </append>
+
+<!--<append xpath="/items">
+        <item name="drinkCanEmpty"> 
+	        <property name="HoldType" value="14"/> 
+	        <property name="Meshfile" value="@:Other/Items/Food/can_emptyPrefab.prefab"/> 
+	        <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/> 
+	        <property name="Material" value="Mmetal"/> 
+	        <property name="Stacknumber" value="500"/> 
+	        <property name="EconomicValue" value="5"/> 
+	        <property name="CraftingIngredientTime" value="9"/> 
+	        <property name="Group" value="Resources"/> 
+        </item> 
+    </append>-->
+
+<!--чтобы появлялась после того как выпит напиток-->
+    <append xpath="/items/item[@name='drinkJarRiverWater']/property[@class='Action0']">
+        <property name="Create_item" value="drinkJarEmpty"/>
+    </append>
+
+    <append xpath="/items/item[@name='drinkJarBoiledWater']/property[@class='Action0']">
+        <property name="Create_item" value="drinkJarEmpty"/>
+    </append>
+
+    <append xpath="/items/item[@name='drinkJarPureMineralWater']/property[@class='Action0']">
+        <property name="Create_item" value="drinkJarEmpty"/>
+    </append>
+
+    <append xpath="/items/item[@name='drinkJarYuccaJuice']/property[@class='Action0']">
+        <property name="Create_item" value="drinkJarEmpty"/>
+    </append>
+    
+    <append xpath="/items/item[@name='drinkJarGoldenRodTea']/property[@class='Action0']">
+        <property name="Create_item" value="drinkJarEmpty"/>
+    </append>
+    
+    <append xpath="/items/item[@name='drinkJarRedTea']/property[@class='Action0']">
+        <property name="Create_item" value="drinkJarEmpty"/>
+    </append>
+    
+    <append xpath="/items/item[@name='drinkYuccaJuiceSmoothie']/property[@class='Action0']">
+        <property name="Create_item" value="drinkJarEmpty"/>
+    </append>
+    
+    <append xpath="/items/item[@name='drinkJarCoffee']/property[@class='Action0']">
+        <property name="Create_item" value="drinkJarEmpty"/>
+    </append>
+    
+    <append xpath="/items/item[@name='drinkJarBeer']/property[@class='Action0']">
+        <property name="Create_item" value="drinkJarEmpty"/>
+    </append>
+    
+    <append xpath="/items/item[@name='drinkJarGrandpasMoonshine']/property[@class='Action0']">
+        <property name="Create_item" value="drinkJarEmpty"/>
+    </append>
+    
+    <append xpath="/items/item[@name='drinkJarGrandpasAwesomeSauce']/property[@class='Action0']">
+        <property name="Create_item" value="drinkJarEmpty"/>
+    </append>
+    
+    <append xpath="/items/item[@name='drinkJarGrandpasForgettingElixir']/property[@class='Action0']">
+        <property name="Create_item" value="drinkJarEmpty"/>
+    </append>
+
+    <append xpath="/items/item[(starts-with(@name, 'armor') or starts-with(@name, 'gun') or starts-with(@name, 'melee')) and contains(@name, 'Parts')]">
+        <property name="Group" value="Tools/Traps"/>
+    </append>
+</config>
+
+
+    
